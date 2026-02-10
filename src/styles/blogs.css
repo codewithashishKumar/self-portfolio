@@ -1,0 +1,7 @@
+.blogAshSection {
+    min-height: 68vh;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    padding: 20px 100px;
+}

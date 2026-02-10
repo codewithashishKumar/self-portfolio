@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BETTER FONT */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
+
+    background-color: #ffffff;
+    color: #111;
+}
+
+/* REMOVE LINK STYLES */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+}
+
+/* CUSTOM WEBKIT SCROLLBAR */
+
+/* Width of the entire scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+/* Scroll thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    transition: background 0.3s ease;
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff6b00;
+}

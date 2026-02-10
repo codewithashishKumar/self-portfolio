@@ -1,0 +1,108 @@
+.hero {
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+/* LEFT SIDE */
+.hero-left {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.accent {
+    color: #ff6b00;
+}
+
+/* subtitle */
+.hero-subtitle {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #555;
+}
+
+/* button */
+.hero-btn {
+    margin-top: 40px;
+    padding: 16px 34px;
+
+    background: #ffffff;
+    border: 3px solid #000;
+    box-shadow: 10px 10px 0 #000;
+    color: #000;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transform: translate(-6px, -6px);
+    transition: all 0.18s ease;
+    will-change: transform;
+
+    outline: none;
+}
+
+.hero-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 #000;
+}
+
+/* optional: tactile click feel */
+.hero-btn:active {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 #000;
+}
+
+/* optional: accessibility-friendly focus */
+.hero-btn:focus-visible {
+    outline: 3px dashed #000;
+    outline-offset: 4px;
+}
+
+
+/* RIGHT SIDE */
+.hero-right {
+    position: relative;
+}
+
+/* circle background */
+.circle {
+    width: 420px;
+    height: 420px;
+    background: #e5e5e5;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* profile image */
+.hero-img {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* floating badge */
+.badge {
+    position: absolute;
+    bottom: 40px;
+    left: -40px;
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
+    color: white;
+    padding: 20px 26px;
+    border-radius: 10px;
+    font-weight: 700;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}

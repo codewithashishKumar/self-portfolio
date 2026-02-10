@@ -1,0 +1,161 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid #00000050;
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #000;
+    transition: 0.25s ease;
+    padding: 15px;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* HOVER */
+.nav-link:hover {
+    color: #ff6b00;
+}
+
+.nav-link.active {
+    color: #fff;
+    background-color: #ff6b00;
+    font-weight: 700;
+    /* border-radius: 40px; */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.logo-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: black;
+    transition: 0.3s;
+}
+
+/* Animate into X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.overlayNavbar {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+
+    z-index: 9;
+}
+
+/* ACTIVE STATE */
+.overlayNavbar.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 1100;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 260px;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 100px;
+        gap: 10px;
+        transition: 0.4s ease;
+        z-index: 1050;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+}

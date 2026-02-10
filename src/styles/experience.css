@@ -1,0 +1,105 @@
+.experience {
+    padding: 50px 80px;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* reuse later for all sections */
+.section-title {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    width: fit-content;
+    font-family: "Open Sans", sans-serif;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #000, #00000050);
+    border-radius: 10px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+/* ON HOVER */
+.section-title:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.section-sub {
+    text-align: center;
+    color: #000;
+    font-family: "Open Sans", sans-serif;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* TIMELINE */
+.timeline {
+    margin-top: 70px;
+    position: relative;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+/* vertical line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 6.5px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #e4e4e4;
+}
+
+/* item */
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* dot */
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background: #ff6b00;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+/* content */
+.timeline-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+}
+
+.company {
+    display: block;
+    margin: 6px 0;
+    color: #888;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.timeline-content p {
+    color: #444;
+    line-height: 1.6;
+    font-family: "Open Sans", sans-serif;
+}
