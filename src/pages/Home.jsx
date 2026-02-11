@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SkillsSection from "./Skills.jsx";
 import ExperienceSection from "./Experience.jsx";
 import ProjectsSection from "./Projects.jsx";
+import GitHubContributions from "./GitHubContributions.jsx";
 
 
 const Home = () => {
@@ -62,6 +63,7 @@ const Home = () => {
             <SkillsSection />
             <ExperienceSection />
             <ProjectsSection />
+            <GitHubContributions />
         </>
 
 

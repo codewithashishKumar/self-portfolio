@@ -6,7 +6,6 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFoundTV from "./pages/ErrorPage"; // import it
 
-import GitHubContributions from "./pages/GitHubContributions";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
 
           {/* ✅ Catch-all route */}
           <Route path="*" element={<NotFoundTV />} />
-          <Route path="/GitHubContributions" element={<GitHubContributions />} />
         </Route>
       </Routes>
     </BrowserRouter>

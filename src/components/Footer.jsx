@@ -9,7 +9,9 @@ const Footer = () => {
 
             <div className="footer-links">
                 <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
+                <a href="https://github.com/codewithashishKumar" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
             </div>
         </footer>
     );
