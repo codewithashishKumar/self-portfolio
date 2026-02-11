@@ -7,7 +7,7 @@ const projectsData = [
             "A modern personal portfolio built with React showcasing my skills, experience, and projects.",
         tech: ["React", "CSS", "Vite"],
         live: "#",
-        github: "#",
+        github: "https://github.com/codewithashishKumar/self-portfolio",
     },
     {
         title: "Org Chart Builder",
