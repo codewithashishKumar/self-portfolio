@@ -9,22 +9,22 @@ const projectsData = [
         live: "#",
         github: "https://github.com/codewithashishKumar/self-portfolio",
     },
-    {
-        title: "Org Chart Builder",
-        description:
-            "Interactive organization chart using OrgChartJS with dynamic data rendering.",
-        tech: ["JavaScript", "OrgChartJS", "HTML", "CSS"],
-        live: "#",
-        github: "#",
-    },
-    {
-        title: "Full Stack App",
-        description:
-            "A MERN stack application with authentication, REST APIs, and responsive UI.",
-        tech: ["React", "Node", "Express", "MongoDB"],
-        live: "#",
-        github: "#",
-    },
+    // {
+    //     title: "Org Chart Builder",
+    //     description:
+    //         "Interactive organization chart using OrgChartJS with dynamic data rendering.",
+    //     tech: ["JavaScript", "OrgChartJS", "HTML", "CSS"],
+    //     live: "#",
+    //     github: "#",
+    // },
+    // {
+    //     title: "Full Stack App",
+    //     description:
+    //         "A MERN stack application with authentication, REST APIs, and responsive UI.",
+    //     tech: ["React", "Node", "Express", "MongoDB"],
+    //     live: "#",
+    //     github: "#",
+    // },
 ];
 
 const ProjectsSection = () => {
