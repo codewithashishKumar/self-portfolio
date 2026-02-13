@@ -1,3 +1,8 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,10 +35,11 @@
     font-weight: 500;
     color: #000;
     transition: 0.25s ease;
-    padding: 15px;
+    padding: 7px 15px;
     transition: all 0.5s ease;
     display: flex;
     align-items: center;
+    border-radius: 40px;
 }
 
 /* HOVER */

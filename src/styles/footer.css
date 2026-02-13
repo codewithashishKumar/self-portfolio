@@ -29,3 +29,30 @@
 .footer-links a:hover {
     color: #ff6b00;
 }
+
+@media (max-width: 768px) {
+
+    .footer {
+        padding: 30px 20px;
+        /* reduce side padding */
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .footer-text {
+        font-size: 13px;
+    }
+
+    .footer-links {
+        gap: 14px;
+    }
+}
