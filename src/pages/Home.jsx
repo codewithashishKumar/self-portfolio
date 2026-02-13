@@ -1,5 +1,5 @@
 import "../styles/home.css";
-import luffy from "../images/luffy.jpeg";
+import luffy from "../images/profile.jpeg";
 import { useNavigate } from "react-router-dom";
 import SkillsSection from "./Skills.jsx";
 import ExperienceSection from "./Experience.jsx";

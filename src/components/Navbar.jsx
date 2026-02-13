@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import "../styles/navbar.css";
-import luffy from "../images/luffy.jpeg";
+import luffy from "../images/profile.jpeg";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
