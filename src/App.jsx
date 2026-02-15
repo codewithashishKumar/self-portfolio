@@ -4,7 +4,8 @@ import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import NotFoundTV from "./pages/ErrorPage"; // import it
+import NotFoundTV from "./pages/ErrorPage";
+import BlogDetails from "./pages/BlogDetails";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />
 
           {/* ✅ Catch-all route */}

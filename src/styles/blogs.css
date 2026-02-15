@@ -1,3 +1,9 @@
+.blogsContainer {
+    display: flex;
+    min-height: 90vh;
+    flex-direction: column;
+}
+
 .blogsHeader {
     display: flex;
     flex-direction: column;
