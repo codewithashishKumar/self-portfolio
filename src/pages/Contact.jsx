@@ -41,50 +41,52 @@ const Contact = () => {
     };
 
     return (
-        <section className="contact">
+        <section className="contactWrapper">
+            <div className="contact">
 
-            <h1 className="contact-title">
-                Let's Work Together 🚀
-            </h1>
+                <h1 className="contact-title">
+                    Let's Work Together 🚀
+                </h1>
 
-            <p className="contact-sub">
-                Have a project in mind? Feel free to reach out!
-            </p>
+                <p className="contact-sub">
+                    Have a project in mind? Feel free to reach out!
+                </p>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+                <form className="contact-form" onSubmit={handleSubmit}>
 
-                {/* IMPORTANT: add name attributes */}
+                    {/* IMPORTANT: add name attributes */}
 
-                <input
-                    name="name"
-                    type="text"
-                    placeholder="Your Name"
+                    <input
+                        name="name"
+                        type="text"
+                        placeholder="Your Name"
+                    />
+
+                    <input
+                        name="email"
+                        type="text"
+                        placeholder="Your Email"
+                    />
+
+                    <textarea
+                        name="message"
+                        placeholder="Your Message"
+                        rows="6"
+                    />
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+                <Popup
+                    show={showPopup}
+                    message={popupMessage}
+                    onClose={() => setShowPopup(false)}
                 />
 
-                <input
-                    name="email"
-                    type="text"
-                    placeholder="Your Email"
-                />
-
-                <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    rows="6"
-                />
-
-                <button type="submit">
-                    Send Message
-                </button>
-
-            </form>
-
-            <Popup
-                show={showPopup}
-                message={popupMessage}
-                onClose={() => setShowPopup(false)}
-            />
-
+            </div>
         </section>
     );
 };
