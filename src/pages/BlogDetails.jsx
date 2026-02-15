@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { blogData } from "../data/blogData";
 import CustomLoader from "../pages/CustomLoader";
 import "../styles/BlogDetails.css";
 
@@ -7,38 +8,29 @@ const BlogDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const [article, setArticle] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const hasFetched = useRef(false);
+    const article = blogData.find(
+        (blog) => blog.id === parseInt(id)
+    );
 
+    // ✅ Only handle timeout
     useEffect(() => {
-        if (hasFetched.current) return;
-        hasFetched.current = true;
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 1000);
 
-        fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setArticle(data);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error(err);
-                setLoading(false);
-            });
+        return () => clearTimeout(timer);
     }, [id]);
 
     const handleGoBack = () => {
-        if (window.history.length > 1) {
-            navigate(-1);
-        } else {
-            navigate("/blog");
-        }
+        navigate(-1);
     };
 
     if (loading) return <CustomLoader />;
 
-    if (!article) return <p className="loading-text">Product not found.</p>;
+    if (!article)
+        return <p className="loading-text">Blog not found.</p>;
 
     return (
         <section className="indiBlogsPage">
@@ -51,25 +43,48 @@ const BlogDetails = () => {
                     {article.category}
                 </span>
 
-                <h1>{article.title}</h1>
+                <h1 className="news-title">{article.title}</h1>
 
-                <img
-                    src={article.image}
-                    alt={article.title}
-                />
-
-                <p className="blog-price">
-                    💲 {article.price}
+                <p className="blog-rating">
+                    ⭐ {article.rating} ({article.ratingCount} reviews)
                 </p>
 
-                <p>{article.description}</p>
+                {article.content
+                    .split("\n\n")
+                    .filter(para => para.trim() !== "") // ✅ remove empty paragraphs
+                    .map((para, i) => {
 
-                {article.rating && (
-                    <p className="blog-rating">
-                        ⭐ {article.rating.rate} ({article.rating.count} reviews)
-                    </p>
-                )}
+                        const hasImage = i < article.images.length;
+
+                        if (!hasImage) {
+                            return (
+                                <div key={i} className="news-full">
+                                    <p>{para}</p>
+                                </div>
+                            );
+                        }
+
+                        return (
+                            <div
+                                key={i}
+                                className={`news-row ${i % 2 === 0 ? "" : "reverse"}`}
+                            >
+                                <div className="news-image">
+                                    <img
+                                        src={article.images[i]}
+                                        alt={`news-${i}`}
+                                    />
+                                </div>
+
+                                <div className="news-text">
+                                    <p>{para}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
+
             </div>
+
         </section>
     );
 };

@@ -1,52 +1,20 @@
 import "../styles/blogs.css";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CustomLoader from "../pages/CustomLoader";
+import { blogData } from "../data/blogData";
 
 const ITEMS_PER_PAGE = 6;
 
 const Blog = () => {
-    const [blogs, setBlogs] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    const [currentPage, setCurrentPage] = useState(1);
 
-    const totalPages = Math.ceil(blogs.length / ITEMS_PER_PAGE);
-
+    const totalPages = Math.ceil(blogData.length / ITEMS_PER_PAGE);
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentItems = blogs.slice(
+    const currentItems = blogData.slice(
         startIndex,
         startIndex + ITEMS_PER_PAGE
     );
-    const hasFetched = useRef(false);
-
-    useEffect(() => {
-        if (hasFetched.current) return;
-        hasFetched.current = true;
-
-        fetch("https://fakestoreapi.com/products")
-            .then(res => res.json())
-            .then(data => {
-                const formattedData = data.map((item) => ({
-                    id: item.id,
-                    category: item.category,
-                    title: item.title,
-                    description: item.description,
-                    image: item.image,
-                    content: item.description,
-                    rating: item.rating?.rate,
-                    ratingCount: item.rating?.count,
-                }));
-
-                setBlogs(formattedData);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error(err);
-                setLoading(false);
-            });
-    }, []);
-
 
     const handlePageChange = (page) => {
         if (page < 1 || page > totalPages) return;
@@ -54,48 +22,14 @@ const Blog = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    const getPaginationRange = () => {
-        const delta = 2;
-        const range = [];
-        const rangeWithDots = [];
-
-        if (totalPages <= 1) return [];
-
-        for (
-            let i = Math.max(2, currentPage - delta);
-            i <= Math.min(totalPages - 1, currentPage + delta);
-            i++
-        ) {
-            range.push(i);
-        }
-
-        if (currentPage - delta > 2) {
-            rangeWithDots.push(1, "...");
-        } else {
-            rangeWithDots.push(1);
-        }
-
-        rangeWithDots.push(...range);
-
-        if (currentPage + delta < totalPages - 1) {
-            rangeWithDots.push("...", totalPages);
-        } else if (totalPages > 1) {
-            rangeWithDots.push(totalPages);
-        }
-
-        return rangeWithDots;
-    };
-
-    if (loading) return <CustomLoader />;
-
     return (
         <section className="blogsContainer">
             <div className="blogsHeader">
                 <h3 className="blog-titleHeader">
-                    Real Data from FakeStore API
+                    Dummy Blog Data
                 </h3>
                 <p className="blog-titleDesc">
-                    Now your blog is powered by real API data.
+                    Now your blog is powered by static dummy data.
                 </p>
             </div>
 
@@ -120,13 +54,15 @@ const Blog = () => {
                                 </h3>
 
                                 <p className="blog-description">
-                                    {blog.description.substring(0, 80)}...
+                                    {blog.description.substring(0, 100)}...
                                 </p>
 
                                 <button
                                     className="blog-btn"
                                     onClick={() =>
-                                        navigate(`/blog/${blog.id}`)
+                                        navigate(`/blog/${blog.id}`, {
+                                            state: blog
+                                        })
                                     }
                                 >
                                     Read More
@@ -146,22 +82,15 @@ const Blog = () => {
                             ←
                         </button>
 
-                        {getPaginationRange().map((page, index) =>
-                            page === "..." ? (
-                                <span key={index} className="dots">
-                                    ...
-                                </span>
-                            ) : (
-                                <button
-                                    key={index}
-                                    className={`page-btn ${currentPage === page ? "active" : ""
-                                        }`}
-                                    onClick={() => handlePageChange(page)}
-                                >
-                                    {page}
-                                </button>
-                            )
-                        )}
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                            <button
+                                key={page}
+                                className={`page-btn ${currentPage === page ? "active" : ""}`}
+                                onClick={() => handlePageChange(page)}
+                            >
+                                {page}
+                            </button>
+                        ))}
 
                         <button
                             className="arrow-btn"
