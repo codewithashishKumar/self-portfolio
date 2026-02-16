@@ -6,8 +6,16 @@ const projectsData = [
         description:
             "A modern personal portfolio built with React showcasing my skills, experience, and projects.",
         tech: ["React", "CSS", "Vite"],
-        live: "#",
+        live: "https://self-portfolio-sepia.vercel.app/",
         github: "https://github.com/codewithashishKumar/self-portfolio",
+    },
+    {
+        title: "To-Do List App",
+        description:
+            "A responsive and user-friendly task management application built with React. It allows users to add, edit, delete, and mark tasks as complete to stay organized and productive.",
+        tech: ["React", "CSS", "Vite"],
+        live: "https://todolist-rho-cyan.vercel.app/",
+        github: "https://github.com/codewithashishKumar/todoList",
     },
     // {
     //     title: "Org Chart Builder",
