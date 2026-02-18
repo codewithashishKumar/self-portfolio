@@ -17,6 +17,15 @@ const projectsData = [
         live: "https://todolist-rho-cyan.vercel.app/",
         github: "https://github.com/codewithashishKumar/todoList",
     },
+    {
+        title: "WeatherSphere - Weather App",
+        description:
+            "A responsive weather forecasting application that provides real-time weather updates, temperature details, humidity levels, wind speed, and dynamic weather conditions for any city worldwide. Built with a clean and modern UI for a seamless user experience.",
+        tech: ["React", "CSS", "Vite", "OpenWeather API"],
+        live: "https://weather-sphere-steel.vercel.app/",
+        github: "https://github.com/codewithashishKumar/WeatherSphere",
+    },
+
     // {
     //     title: "Org Chart Builder",
     //     description:
