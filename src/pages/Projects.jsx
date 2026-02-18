@@ -1,12 +1,11 @@
 import "../styles/projects.css";
-import { useState } from "react";
 
 
 const projectsData = [
     {
         title: "Portfolio Website",
         description:
-            "A modern personal portfolio built with React showcasing my skills, experience, and projects.",
+            "A responsive React portfolio showcasing my projects, skills, and experience with clean UI design, reusable components, and optimized performance across devices.",
         tech: ["React", "CSS", "Vite"],
         live: "https://self-portfolio-sepia.vercel.app/",
         github: "https://github.com/codewithashishKumar/self-portfolio",
@@ -14,7 +13,7 @@ const projectsData = [
     {
         title: "To-Do List App",
         description:
-            "A responsive and user-friendly task management application built with React. It allows users to add, edit, delete, and mark tasks as complete to stay organized and productive.",
+            "A React-based task management app enabling users to add, edit, delete, and track tasks with dynamic state updates and intuitive interface design.",
         tech: ["React", "CSS", "Vite"],
         live: "https://todolist-rho-cyan.vercel.app/",
         github: "https://github.com/codewithashishKumar/todoList",
@@ -22,7 +21,7 @@ const projectsData = [
     {
         title: "WeatherSphere - Weather App",
         description:
-            "A responsive weather forecasting application that provides real-time weather updates, temperature details, humidity levels, wind speed, and dynamic weather conditions for any city worldwide. Built with a clean and modern UI for a seamless user experience.",
+            "A real-time weather app using React and OpenWeather API to display temperature, humidity, wind speed, and live city-based forecasts.",
         tech: ["React", "CSS", "Vite", "OpenWeather API"],
         live: "https://weather-sphere-steel.vercel.app/",
         github: "https://github.com/codewithashishKumar/WeatherSphere",
@@ -47,10 +46,7 @@ const projectsData = [
     // },
 ];
 
-
 const ProjectsSection = () => {
-    const [expandedCard, setExpandedCard] = useState(null);
-
     return (
         <section className="projects">
             <h2 className="section-title">Projects</h2>
@@ -59,73 +55,59 @@ const ProjectsSection = () => {
             </p>
 
             <div className="projects-grid">
-                {projectsData.map((project, index) => {
+                {projectsData.map((project) => (
 
-                    const isExpanded = expandedCard === index;
+                    <div
+                        className="project-card"
+                        key={project.title}
+                        style={{ background: project.color || "#fff" }}
+                    >
 
-                    return (
-                        <div
-                            className="project-card"
-                            key={project.title}
-                            style={{ background: project.color || "#fff" }}
-                        >
-
-                            {/* TOP BAR */}
-                            <div className="card-head">
-                                {project.title}
-                            </div>
-
-                            {/* CONTENT */}
-                            <div className="card-content">
-
-                                <p className={`project-desc ${isExpanded ? "expanded" : ""}`}>
-                                    {project.description}
-                                </p>
-
-                                {project.description.length > 120 && (
-                                    <span
-                                        className="show-more"
-                                        onClick={() =>
-                                            setExpandedCard(isExpanded ? null : index)
-                                        }
-                                    >
-                                        {isExpanded ? "Show Less" : "Show More"}
-                                    </span>
-                                )}
-
-                                <div className="tech-stack">
-                                    {project.tech.map((tech) => (
-                                        <span key={tech}>{tech}</span>
-                                    ))}
-                                </div>
-
-                                <div className="project-links">
-                                    <a
-                                        href={project.live}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="brutal-btn"
-                                    >
-                                        Live →
-                                    </a>
-
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="brutal-btn"
-                                    >
-                                        GitHub →
-                                    </a>
-                                </div>
-
-                            </div>
+                        {/* TOP BAR */}
+                        <div className="card-head">
+                            {project.title}
                         </div>
-                    );
-                })}
+
+                        {/* CONTENT */}
+                        <div className="card-content">
+
+                            <p className="project-desc">
+                                {project.description}
+                            </p>
+
+                            <div className="tech-stack">
+                                {project.tech.map((tech) => (
+                                    <span key={tech}>{tech}</span>
+                                ))}
+                            </div>
+
+                            <div className="project-links">
+
+                                <a
+                                    href={project.live}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="brutal-btn"
+                                >
+                                    Live →
+                                </a>
+
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="brutal-btn"
+                                >
+                                    GitHub →
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                ))}
             </div>
-
-
 
         </section>
     );
