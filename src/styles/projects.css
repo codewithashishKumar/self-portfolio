@@ -61,7 +61,7 @@
 
     display: -webkit-box;
     -webkit-line-clamp: 4;
-    line-clamp: 4;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -75,10 +75,11 @@
 .show-more {
     display: inline-block;
     margin-top: 6px;
-    color: #007bff;
+    color: #ff6b00;
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
+    transition: all 0.15s ease;
 }
 
 .show-more:hover {
