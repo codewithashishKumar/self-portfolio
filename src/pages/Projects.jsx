@@ -49,7 +49,8 @@ const projectsData = [
 
 
 const ProjectsSection = () => {
-    const [expanded, setExpanded] = useState(false);
+    const [expandedCard, setExpandedCard] = useState(null);
+
     return (
         <section className="projects">
             <h2 className="section-title">Projects</h2>
@@ -58,8 +59,9 @@ const ProjectsSection = () => {
             </p>
 
             <div className="projects-grid">
-                {projectsData.map((project) => {
+                {projectsData.map((project, index) => {
 
+                    const isExpanded = expandedCard === index;
 
                     return (
                         <div
@@ -76,16 +78,18 @@ const ProjectsSection = () => {
                             {/* CONTENT */}
                             <div className="card-content">
 
-                                <p className={`project-desc ${expanded ? "expanded" : ""}`}>
+                                <p className={`project-desc ${isExpanded ? "expanded" : ""}`}>
                                     {project.description}
                                 </p>
 
                                 {project.description.length > 120 && (
                                     <span
                                         className="show-more"
-                                        onClick={() => setExpanded(!expanded)}
+                                        onClick={() =>
+                                            setExpandedCard(isExpanded ? null : index)
+                                        }
                                     >
-                                        {expanded ? "Show Less" : "Show More"}
+                                        {isExpanded ? "Show Less" : "Show More"}
                                     </span>
                                 )}
 
@@ -120,6 +124,7 @@ const ProjectsSection = () => {
                     );
                 })}
             </div>
+
 
 
         </section>
