@@ -1,4 +1,6 @@
 import "../styles/projects.css";
+import { useState } from "react";
+
 
 const projectsData = [
     {
@@ -26,6 +28,7 @@ const projectsData = [
         github: "https://github.com/codewithashishKumar/WeatherSphere",
     },
 
+
     // {
     //     title: "Org Chart Builder",
     //     description:
@@ -44,7 +47,9 @@ const projectsData = [
     // },
 ];
 
+
 const ProjectsSection = () => {
+    const [expanded, setExpanded] = useState(false);
     return (
         <section className="projects">
             <h2 className="section-title">Projects</h2>
@@ -53,59 +58,69 @@ const ProjectsSection = () => {
             </p>
 
             <div className="projects-grid">
-                {projectsData.map((project) => (
+                {projectsData.map((project) => {
 
-                    <div
-                        className="project-card"
-                        key={project.title}   // ✅ better than index
-                        style={{ background: project.color || "#fff" }} // optional dynamic color
-                    >
 
-                        {/* TOP BAR */}
-                        <div className="card-head">
-                            {project.title}
-                        </div>
+                    return (
+                        <div
+                            className="project-card"
+                            key={project.title}
+                            style={{ background: project.color || "#fff" }}
+                        >
 
-                        {/* CONTENT */}
-                        <div className="card-content">
-
-                            <p className="project-desc">
-                                {project.description}
-                            </p>
-
-                            <div className="tech-stack">
-                                {project.tech.map((tech) => (
-                                    <span key={tech}>{tech}</span>
-                                ))}
+                            {/* TOP BAR */}
+                            <div className="card-head">
+                                {project.title}
                             </div>
 
-                            <div className="project-links">
+                            {/* CONTENT */}
+                            <div className="card-content">
 
-                                <a
-                                    href={project.live}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="brutal-btn"
-                                >
-                                    Live →
-                                </a>
+                                <p className={`project-desc ${expanded ? "expanded" : ""}`}>
+                                    {project.description}
+                                </p>
 
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="brutal-btn"
-                                >
-                                    GitHub →
-                                </a>
+                                {project.description.length > 120 && (
+                                    <span
+                                        className="show-more"
+                                        onClick={() => setExpanded(!expanded)}
+                                    >
+                                        {expanded ? "Show Less" : "Show More"}
+                                    </span>
+                                )}
+
+                                <div className="tech-stack">
+                                    {project.tech.map((tech) => (
+                                        <span key={tech}>{tech}</span>
+                                    ))}
+                                </div>
+
+                                <div className="project-links">
+                                    <a
+                                        href={project.live}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="brutal-btn"
+                                    >
+                                        Live →
+                                    </a>
+
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="brutal-btn"
+                                    >
+                                        GitHub →
+                                    </a>
+                                </div>
 
                             </div>
-
                         </div>
-                    </div>
-
-                ))}
+                    );
+                })}
             </div>
+
 
         </section>
     );

@@ -51,7 +51,7 @@ const BlogDetails = () => {
 
                 {article.content
                     .split("\n\n")
-                    .filter(para => para.trim() !== "") // ✅ remove empty paragraphs
+                    .filter(para => para.trim() !== "")
                     .map((para, i) => {
 
                         const hasImage = i < article.images.length;
