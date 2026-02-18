@@ -1,0 +1,171 @@
+/* ============================= */
+/* ALL PROJECTS SECTION */
+/* ============================= */
+
+.all-projects {
+    padding: 100px 80px;
+    background: #e5e5e5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.allprojectsHead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+
+}
+
+
+/* ============================= */
+/* GRID */
+/* ============================= */
+
+.all-projects-grid {
+    margin-top: 70px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 40px;
+    width: 100%;
+    max-width: 1300px;
+}
+
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.all-project-card {
+    font-family: Montserrat, sans-serif;
+
+    background: #ffffff;
+    border: 3px solid #000;
+    box-shadow: 10px 10px 0 #000;
+
+    transform: translate(-6px, -6px);
+    transition: all 0.18s ease;
+
+    overflow: hidden;
+    will-change: transform;
+}
+
+.all-project-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 #000;
+}
+
+
+/* ============================= */
+/* CARD HEADER */
+/* ============================= */
+
+.all-card-head {
+    background: #fff;
+    border-bottom: 3px solid #000;
+
+    font-weight: 900;
+    font-size: 14px;
+
+    padding: 6px 12px;
+}
+
+
+/* ============================= */
+/* CARD CONTENT */
+/* ============================= */
+
+.all-card-content {
+    padding: 14px;
+}
+
+.all-project-desc {
+    margin-top: 10px;
+    color: #444;
+    line-height: 1.5;
+}
+
+
+.all-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.all-tech-stack span {
+    border: 2px solid #000;
+    padding: 4px 10px;
+    background: #fff;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+
+.all-project-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.all-brutal-btn-head {
+    padding: 6px 12px;
+
+    border: 3px solid #000;
+    box-shadow: 3px 3px 0 #000;
+
+    background: #ff6b00;
+    color: #fff;
+    font-weight: 700;
+
+    transition: all 0.15s ease;
+    text-decoration: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.all-brutal-btn-head:hover {
+    transform: translate(1.5px, 1.5px);
+    box-shadow: 1.5px 1.5px 0 #000;
+}
+
+
+.all-brutal-btn {
+    padding: 6px 12px;
+
+    border: 3px solid #000;
+    box-shadow: 3px 3px 0 #000;
+
+    background: #ff6b00;
+    color: #fff;
+    font-weight: 700;
+
+    transition: all 0.15s ease;
+    text-decoration: none;
+}
+
+.all-brutal-btn:hover {
+    transform: translate(1.5px, 1.5px);
+    box-shadow: 1.5px 1.5px 0 #000;
+}
+
+
+/* ============================= */
+/* TITLE */
+/* ============================= */
+
+.all-section-title {
+    font-size: 32px;
+    font-weight: 900;
+}

@@ -6,6 +6,8 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFoundTV from "./pages/ErrorPage";
 import BlogDetails from "./pages/BlogDetails";
+import AllProjects from "./pages/AllProjects";
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/AllProjects" element={<AllProjects />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />

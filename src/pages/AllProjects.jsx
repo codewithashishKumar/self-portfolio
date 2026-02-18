@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/projects.css";
+import "../styles/allProjects.css";
 
 const projectsData = [
     {
@@ -31,53 +31,49 @@ const projectsData = [
     },
 ];
 
-const ProjectsSection = ({ showAll = false }) => {
-
-    // 👇 Show only 3 on homepage
-    const displayedProjects = showAll
-        ? projectsData
-        : projectsData.slice(0, 3);
-
+const AllProjects = () => {
     return (
-        <section className="projects">
-            <h2 className="section-title">Projects</h2>
-            <p className="section-subProject">
-                A curated selection of projects showcasing my work across design and development.
-            </p>
+        <section className="all-projects">
+            <div className="allprojectsHead">
+                <div className="all-gobackBTN">
+                    <Link to="/" className="all-brutal-btn-head">
+                        ← Go Back
+                    </Link>
+                </div>
 
-            <div className="projects-grid">
-                {displayedProjects.map((project) => (
+                <h2 className="all-section-title">All Projects</h2>
+            </div>
 
+            <div className="all-projects-grid">
+                {projectsData.map((project) => (
                     <div
-                        className="project-card"
+                        className="all-project-card"
                         key={project.id}
-                        style={{ background: project.color || "#fff" }}
                     >
-
-                        <div className="card-head">
+                        <div className="all-card-head">
                             {project.title}
                         </div>
 
-                        <div className="card-content">
+                        <div className="all-card-content">
 
-                            <p className="project-desc">
+                            <p className="all-project-desc">
                                 {project.description}
                             </p>
 
-                            <div className="tech-stack">
+                            <div className="all-tech-stack">
                                 {project.tech.map((tech) => (
                                     <span key={tech}>{tech}</span>
                                 ))}
                             </div>
 
-                            <div className="project-links">
+                            <div className="all-project-links">
 
                                 {project.live && (
                                     <a
                                         href={project.live}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="brutal-btn"
+                                        className="all-brutal-btn"
                                     >
                                         Live →
                                     </a>
@@ -88,7 +84,7 @@ const ProjectsSection = ({ showAll = false }) => {
                                         href={project.github}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="brutal-btn"
+                                        className="all-brutal-btn"
                                     >
                                         GitHub →
                                     </a>
@@ -98,21 +94,11 @@ const ProjectsSection = ({ showAll = false }) => {
 
                         </div>
                     </div>
-
                 ))}
             </div>
-
-            {/* 👇 Show button only if not on AllProjects page */}
-            {!showAll && projectsData.length > 3 && (
-                <div style={{ textAlign: "center", marginTop: "2rem" }}>
-                    <Link to="/AllProjects" className="brutal-btn">
-                        View All Projects →
-                    </Link>
-                </div>
-            )}
 
         </section>
     );
 };
 
-export default ProjectsSection;
+export default AllProjects;
