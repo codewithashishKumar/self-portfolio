@@ -126,6 +126,7 @@
     cursor: pointer;
     width: 100%;
     padding-top: 30px;
+    height: 110px;
 }
 
 .skill-card ul li {
