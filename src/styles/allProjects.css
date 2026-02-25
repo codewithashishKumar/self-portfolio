@@ -1,11 +1,7 @@
-/* ============================= */
-/* ALL PROJECTS SECTION */
-/* ============================= */
-
 .all-projects {
     padding: 100px 80px;
-    background: var(--bg);
-
+    background: var(--skills-bg);
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,35 +13,22 @@
     justify-content: center;
     width: 100%;
     position: relative;
-
 }
-
-
-/* ============================= */
-/* GRID */
-/* ============================= */
 
 .all-projects-grid {
     margin-top: 70px;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-
     gap: 40px;
     width: 100%;
     max-width: 1300px;
 }
 
 
-/* ============================= */
-/* CARD */
-/* ============================= */
-
 .all-project-card {
     font-family: Montserrat, sans-serif;
-
     background: var(--card-bg);
-    border: 3px solid var(--border);
+    border: 2px solid var(--border);
     box-shadow: 10px 10px 0 var(--shadow);
 
     transform: translate(-6px, -6px);
@@ -61,18 +44,11 @@
 }
 
 
-/* ============================= */
-/* CARD HEADER */
-/* ============================= */
-
 .all-card-head {
     background: var(--card-bg);
-    border: 3px solid var(--border);
-    border-bottom: 3px solid var(--border);
-
+    border-bottom: 2px solid var(--border);
     font-weight: 900;
     font-size: 14px;
-
     padding: 6px 12px;
 }
 
@@ -104,11 +80,6 @@
     font-weight: 700;
 }
 
-
-/* ============================= */
-/* BUTTONS */
-/* ============================= */
-
 .all-project-links {
     margin-top: 20px;
     display: flex;
@@ -117,8 +88,7 @@
 
 .all-brutal-btn-head {
     padding: 6px 12px;
-
-    border: 3px solid var(--border);
+    border: 2px solid var(--border);
     box-shadow: 3px 3px 0 var(--shadow);
 
     background: var(--accent);
@@ -158,11 +128,28 @@
 }
 
 
-/* ============================= */
-/* TITLE */
-/* ============================= */
-
 .all-section-title {
     font-size: 32px;
     font-weight: 900;
+    position: relative;
+}
+
+.all-section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg,
+            var(--text),
+            transparent);
+    border-radius: 10px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.all-section-title:hover::after {
+    transform: translateX(-50%) scaleX(1);
 }
