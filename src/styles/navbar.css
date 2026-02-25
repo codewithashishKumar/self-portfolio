@@ -18,7 +18,7 @@ body {
 }
 
 body.dark .navbar {
-    background: rgba(15, 15, 15, 0.6);
+    background: rgba(0, 0, 0);
 }
 
 .logo {
@@ -117,6 +117,18 @@ body.dark .navbar {
     opacity: 1;
     visibility: visible;
 }
+
+.theme-toggle {
+    padding: 8px 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    z-index: 999;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+}
+
 
 @media (max-width: 767px) {
 

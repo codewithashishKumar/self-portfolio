@@ -69,11 +69,13 @@ const SkillsSection = () => {
 
                         <ul>
                             {category.skills.map((skill) => (
-                                <li key={skill.name} style={{ color: skill.color }}>
-                                    {React.cloneElement(skill.icon, { color: skill.color })}
+                                <li key={skill.name} className="skill-item">
+                                    {React.cloneElement(skill.icon, {
+                                        className: "skill-icon",
+                                        color: skill.color,
+                                    })}
                                     <span>{skill.name}</span>
                                 </li>
-
                             ))}
                         </ul>
                         <div className="progress-wrapper">
@@ -82,7 +84,6 @@ const SkillsSection = () => {
                                 className="progress-fill"
                                 style={{
                                     width: `${category.level}%`,
-                                    background: category.barColor,
                                 }}
                             >
                                 <span className="progress-text">{category.level}%</span>

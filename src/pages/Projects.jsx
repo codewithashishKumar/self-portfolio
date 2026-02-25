@@ -51,7 +51,7 @@ const ProjectsSection = ({ showAll = false }) => {
                     <div
                         className="project-card"
                         key={project.id}
-                        style={{ background: project.color || "#fff" }}
+                        style={{ background: project.color || "var(--card-bg)" }}
                     >
 
                         <div className="card-head">

@@ -1,9 +1,13 @@
 .footer {
-    padding: 40px 80px;
+    padding: 20px 40px;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+body.dark .footer {
+    background: rgba(0, 0, 0);
 }
 
 .footer-text {
@@ -17,7 +21,7 @@
 }
 
 .footer-links a {
-    color: var(--subtext);
+    color: var(--text);
     font-weight: 500;
     transition: 0.3s;
 }

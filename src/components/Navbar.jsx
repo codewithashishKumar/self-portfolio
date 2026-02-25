@@ -1,11 +1,25 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/navbar.css";
 import luffy from "../images/profile.jpeg";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
+    // Default = light
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem("theme") || "light";
+    });
+
+    useEffect(() => {
+        if (theme === "dark") {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+
+        localStorage.setItem("theme", theme);
+    }, [theme]);
 
     return (
         <>
@@ -15,7 +29,6 @@ const Navbar = () => {
                     <span className="logo-text">Ashish Kumar</span>
                 </NavLink>
 
-                {/* Hamburger */}
                 <div
                     className={`hamburger ${menuOpen ? "active" : ""}`}
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -25,20 +38,35 @@ const Navbar = () => {
                     <span></span>
                 </div>
 
-                {/* Nav Links */}
                 <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-                    <NavLink to="/" className="nav-link" onClick={() => setMenuOpen(false)}>Home</NavLink>
-                    <NavLink to="/blog" className="nav-link" onClick={() => setMenuOpen(false)}>Blog</NavLink>
-                    <NavLink to="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>Contact</NavLink>
+
+
+                    <NavLink to="/" className="nav-link" onClick={() => setMenuOpen(false)}>
+                        Home
+                    </NavLink>
+                    <NavLink to="/blog" className="nav-link" onClick={() => setMenuOpen(false)}>
+                        Blog
+                    </NavLink>
+                    <NavLink to="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>
+                        Contact
+                    </NavLink>
+                    <button
+                        onClick={() =>
+                            setTheme(prev =>
+                                prev === "light" ? "dark" : "light"
+                            )
+                        }
+                        className="theme-toggle"
+                    >
+                        {theme === "light" ? "🌙" : "☀️"}
+                    </button>
                 </div>
             </nav>
 
-            {/* Overlay */}
             <div
                 className={`overlayNavbar ${menuOpen ? "show" : ""}`}
                 onClick={() => setMenuOpen(false)}
             />
-
         </>
     );
 };

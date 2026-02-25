@@ -1,10 +1,12 @@
 .projects {
     padding: 100px 80px;
-    background: var(--bg);
+    background: var(--skills-bg);
+    color: var(--skills-color);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 .projects-grid {
     margin-top: 70px;
@@ -15,30 +17,48 @@
     max-width: 1300px;
 }
 
+
 .project-card {
     font-family: Montserrat, sans-serif;
-    background: var(--card-bg);
+    background: var(--bg);
     border: 3px solid var(--border);
     box-shadow: 10px 10px 0 var(--shadow);
+
     transform: translate(-6px, -6px);
     transition: all 0.18s ease;
+
     overflow: hidden;
+
     will-change: transform;
+    /* GPU acceleration */
 }
 
+
+/* smoother hover */
 .project-card:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 var(--shadow);
+    box-shadow: 6px 6px 0 #000;
 }
 
+
+/* ============================= */
+/* CARD HEADER */
+/* ============================= */
+
 .card-head {
-    background: var(--card-bg);
+    background: var(--bg);
     border-bottom: 3px solid var(--border);
+
     font-weight: 900;
     font-size: 14px;
+
     padding: 6px 12px;
-    color: var(--text);
 }
+
+
+/* ============================= */
+/* CARD CONTENT */
+/* ============================= */
 
 .card-content {
     padding: 14px;
@@ -46,9 +66,10 @@
 
 .project-desc {
     margin-top: 10px;
-    color: var(--subtext);
+    color: --var(--subtext);
     line-height: 1.5;
 }
+
 
 .tech-stack {
     display: flex;
@@ -58,13 +79,14 @@
 }
 
 .tech-stack span {
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     padding: 4px 10px;
-    background: var(--card-bg);
+    background: var(--bg);
+
     font-size: 12px;
     font-weight: 700;
-    color: var(--text);
 }
+
 
 .project-links {
     margin-top: 20px;
@@ -74,22 +96,29 @@
 
 .brutal-btn {
     padding: 6px 12px;
-    border: 3px solid var(--border);
+
+    border: 2px solid var(--border);
     box-shadow: 3px 3px 0 var(--shadow);
     background: var(--accent);
     color: #fff;
     font-weight: 700;
+
     transition: all 0.15s ease;
 }
 
 .brutal-btn:hover {
     transform: translate(1.5px, 1.5px);
-    box-shadow: 1.5px 1.5px 0 var(--shadow);
+    box-shadow: 1.5px 1.5px 0 #000;
 }
+
+
+/* ============================= */
+/* SECTION TEXT */
+/* ============================= */
 
 .section-subProject {
     text-align: center;
-    color: var(--subtext);
+    color: var(--skills-color);
     font-family: "Open Sans", sans-serif;
     margin-top: 10px;
     max-width: 700px;
