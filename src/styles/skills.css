@@ -1,6 +1,6 @@
 .skills {
     padding: 100px 80px;
-    background: #e5e5e5;
+    background: var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,8 +16,8 @@
     margin: auto;
     cursor: pointer;
     position: relative;
+    color: var(--text);
 }
-
 
 .skills-title::after {
     content: "";
@@ -26,27 +26,24 @@
     bottom: 0px;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #000, #00000050);
+    background: linear-gradient(90deg, var(--border), rgba(255, 255, 255, 0.3));
     border-radius: 10px;
     transform: translateX(-50%) scaleX(0);
     transform-origin: center;
     transition: transform 0.3s ease;
 }
 
-/* ON HOVER */
 .skills-title:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
 
-
 .skills-sub {
     margin-top: 10px;
     text-align: center;
-    color: #000;
+    color: var(--subtext);
     font-family: "Open Sans", sans-serif;
 }
 
-/* GRID */
 .skills-grid {
     margin-top: 60px;
     display: grid;
@@ -57,10 +54,10 @@
 
 .skill-card {
     font-family: Montserrat, sans-serif;
-    background: #ffffff;
+    background: var(--card-bg);
     padding: 0 0px 30px 0px;
-    border: 3px solid #000;
-    box-shadow: 10px 10px 0 #000;
+    border: 3px solid var(--border);
+    box-shadow: 10px 10px 0 var(--shadow);
     transform: translate(-6px, -6px);
     transition: all 0.18s ease;
     will-change: transform;
@@ -70,28 +67,25 @@
     align-items: center;
 }
 
-/* smoother hover */
 .skill-card:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 #000;
+    box-shadow: 6px 6px 0 var(--shadow);
 }
 
-/* optional — subtle press if clickable */
 .skill-card:active {
     transform: translate(0, 0);
-    box-shadow: 0 0 0 #000;
+    box-shadow: 0 0 0 var(--shadow);
 }
 
 .skillCarHead {
-    background: #fff;
-    border-bottom: 3px solid #000;
+    background: var(--card-bg);
+    border-bottom: 3px solid var(--border);
     font-weight: 900;
     font-size: 14px;
     padding: 6px 12px;
     width: 100%;
+    color: var(--text);
 }
-
-
 
 .skills-scroll-wrapper {
     overflow: hidden;
@@ -104,12 +98,10 @@
     animation: scrollLeft 12s linear infinite;
 }
 
-/* pause on hover */
 .skill-card:hover .skills-scroll {
     animation-play-state: paused;
 }
 
-/* lists */
 .skills-scroll ul {
     display: flex;
     gap: 40px;
@@ -136,9 +128,9 @@
     align-items: center;
     font-family: "Open Sans", sans-serif;
     text-align: center;
+    color: var(--text);
 }
 
-/* items */
 .skills-scroll li {
     display: flex;
     flex-direction: column;
@@ -147,8 +139,8 @@
     gap: 10px;
     min-width: 90px;
     cursor: pointer;
+    color: var(--text);
 }
-
 
 .skill-card svg {
     font-size: 3rem;
@@ -158,7 +150,6 @@
 .skill-card li:hover svg {
     transform: scale(1.1);
 }
-
 
 @media (max-width: 767px) {
     .skills {
@@ -173,26 +164,27 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
     }
-
 }
 
-/* wrapper */
 .progress-wrapper {
     width: 90%;
     height: 10px;
-    background: #e5e5e5;
+    background: rgba(0, 0, 0, 0.1);
     margin: 18px auto 10px auto;
 }
 
-/* fill */
+body.dark .progress-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .progress-fill {
     height: 100%;
     position: relative;
     width: 0;
+    background: var(--accent);
     animation: fillBar 1.2s ease forwards;
 }
 
-/* percentage text */
 .progress-text {
     position: absolute;
     right: 0px;
@@ -200,10 +192,9 @@
     font-size: 12px;
     font-weight: 700;
     font-family: "Open Sans", sans-serif;
-    color: #333;
+    color: var(--text);
 }
 
-/* animation */
 @keyframes fillBar {
     from {
         width: 0;
