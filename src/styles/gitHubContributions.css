@@ -1,6 +1,6 @@
 .gitHubBody {
     padding: 100px 10px;
-    background: #fff;
+    background: var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,6 +20,7 @@
     text-align: center;
     cursor: pointer;
     position: relative;
+    color: var(--text);
 }
 
 .gitHubSection {
@@ -30,7 +31,7 @@
 
 .react-activity-calendar__legend-month {
     font-family: "Open Sans", sans-serif;
-
+    color: var(--text);
 }
 
 .gitHubLinkClass {
@@ -39,20 +40,17 @@
     font-family: "Open Sans", sans-serif;
     text-align: center;
     cursor: pointer;
-    position: relative;
+    color: var(--text);
 }
-
 
 .gitHubLinkClass::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: -2px;
-
     width: 0;
     height: 2px;
-    background: #ff6b00;
-
+    background: var(--accent);
     transition: width 0.8s ease-in-out;
 }
 

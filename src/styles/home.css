@@ -6,7 +6,6 @@
     padding: 0 100px;
 }
 
-/* LEFT SIDE */
 .hero-left {
     max-width: 600px;
 }
@@ -15,80 +14,67 @@
     font-size: 72px;
     font-weight: 800;
     line-height: 1.1;
+    color: var(--text);
 }
 
 .accent {
-    color: #ff6b00;
+    color: var(--accent);
 }
 
-/* subtitle */
 .hero-subtitle {
     margin-top: 20px;
     font-size: 24px;
-    color: #555;
+    color: var(--subtext);
 }
 
-/* button */
 .hero-btn {
     margin-top: 40px;
     padding: 16px 34px;
-
-    background: #ff6b00;
-    border: 3px solid #000;
-    box-shadow: 10px 10px 0 #000;
+    background: var(--accent);
+    border: 3px solid var(--border);
+    box-shadow: 10px 10px 0 var(--shadow);
     color: #fff;
-
     font-size: 16px;
     font-weight: 600;
     font-family: inherit;
-
     cursor: pointer;
-
     transform: translate(-6px, -6px);
     transition: all 0.18s ease;
     will-change: transform;
-
     outline: none;
 }
 
 .hero-btn:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 #000;
+    box-shadow: 6px 6px 0 var(--shadow);
 }
 
-/* optional: tactile click feel */
 .hero-btn:active {
     transform: translate(0, 0);
-    box-shadow: 0 0 0 #000;
+    box-shadow: 0 0 0 var(--shadow);
 }
 
-/* optional: accessibility-friendly focus */
 .hero-btn:focus-visible {
-    outline: 3px dashed #000;
+    outline: 3px dashed var(--border);
     outline-offset: 4px;
 }
 
-
-/* RIGHT SIDE */
 .hero-right {
     position: relative;
 }
 
-/* circle background */
 .circle {
     width: 420px;
     height: 420px;
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px var(--shadow);
 }
 
-
-/* profile image */
 .hero-img {
     width: 390px;
     height: 390px;
@@ -97,7 +83,6 @@
     object-position: top;
 }
 
-/* floating badge */
 .badge {
     position: absolute;
     bottom: 40px;
