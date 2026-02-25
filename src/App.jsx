@@ -21,7 +21,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />
 
-          {/* ✅ Catch-all route */}
+          {/* Catch-all route */}
           <Route path="*" element={<NotFoundTV />} />
         </Route>
       </Routes>

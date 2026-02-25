@@ -14,7 +14,7 @@ const BlogDetails = () => {
         (blog) => blog.id === parseInt(id)
     );
 
-    // ✅ Only handle timeout
+    //  Only handle timeout
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
