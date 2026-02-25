@@ -5,23 +5,22 @@
     width: 100%;
 }
 
-
 .back-btn {
     padding: 6px 12px;
-    border: 3px solid #000;
-    box-shadow: 3px 3px 0 #000;
-    background: #ff6b00;
+    border: 3px solid var(--border);
+    box-shadow: 3px 3px 0 var(--shadow);
+    background: var(--accent);
     color: #fff;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.15s ease;
     width: fit-content;
-    margin: 50px 00px 15px 100px;
+    margin: 50px 0px 15px 100px;
 }
 
 .back-btn:hover {
     transform: translate(1.5px, 1.5px);
-    box-shadow: 1.5px 1.5px 0 #000;
+    box-shadow: 1.5px 1.5px 0 var(--shadow);
 }
 
 .blog-details {
@@ -29,10 +28,9 @@
     padding: 40px 100px;
     font-family: "Georgia", serif;
     line-height: 1.8;
-    color: #111;
+    color: var(--text);
 }
 
-/* Newspaper Title */
 .news-title {
     font-size: 32px;
     font-weight: 700;
@@ -40,58 +38,55 @@
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid var(--border);
     padding-bottom: 10px;
 }
 
-/* Alternating Layout */
 .news-row {
     display: flex;
     align-items: center;
     gap: 40px;
     margin-bottom: 60px;
-
 }
 
 .news-row.reverse {
     flex-direction: row-reverse;
 }
 
-/* Image Styling */
 .news-image img {
     width: 350px;
     height: 350px;
     object-fit: cover;
-    border: 3px solid #000;
-    box-shadow: 8px 8px 0 #000;
+    border: 3px solid var(--border);
+    box-shadow: 8px 8px 0 var(--shadow);
     transition: 0.3s ease;
 }
 
 .news-image img:hover {
     transform: translate(-4px, -4px);
-    box-shadow: 4px 4px 0 #000;
+    box-shadow: 4px 4px 0 var(--shadow);
 }
 
-/* Text Styling */
 .news-text {
     flex: 1;
-
 }
 
 .news-text p {
     font-family: "Open Sans", sans-serif;
     text-align: justify;
+    color: var(--subtext);
 }
 
 .blog-rating {
     font-family: "Open Sans", sans-serif;
+    color: var(--text);
 }
 
 .news-full {
     font-family: "Open Sans", sans-serif;
+    color: var(--text);
 }
 
-/* Responsive */
 @media (max-width: 1300px) {
     .news-row {
         flex-direction: column !important;
