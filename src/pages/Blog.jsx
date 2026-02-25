@@ -26,7 +26,7 @@ const Blog = () => {
         <section className="blogsContainer">
             <div className="blogsHeader">
                 <h3 className="blog-titleHeader">
-                    Dummy Blog Data
+                    Blog Data
                 </h3>
                 <p className="blog-titleDesc">
                     Now your blog is powered by static dummy data.
