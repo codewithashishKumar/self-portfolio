@@ -5,43 +5,41 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     z-index: 999;
 }
 
 .popup-box {
-    background: white;
+    background: var(--card-bg);
+    color: var(--text);
     padding: 4rem;
     width: 420px;
     text-align: center;
-    border: 6px solid #000;
-    box-shadow: 12px 12px 0 #000;
+    border: 6px solid var(--border);
+    box-shadow: 12px 12px 0 var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
     animation: pop 0.25s ease;
 }
 
 .popup-box button {
     padding: 5px 16px;
-    border: 2.5px solid #000;
-    background: #ff6b00;
+    border: 2.5px solid var(--border);
+    background: var(--accent);
     color: #fff;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 8px 8px 0 #000;
+    box-shadow: 8px 8px 0 var(--shadow);
     transition: transform 0.3s, box-shadow 0.3s;
     margin-top: 20px;
 }
 
-
 .popup-box button:hover {
     opacity: 0.9;
     transform: translate(4px, 4px);
-    box-shadow: 4px 4px 0 #000;
+    box-shadow: 4px 4px 0 var(--shadow);
 }
 
 @keyframes pop {
