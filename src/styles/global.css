@@ -6,46 +6,60 @@
     box-sizing: border-box;
 }
 
-/* BETTER FONT */
+:root {
+    --bg: #ffffff;
+    --text: #111;
+    --card-bg: #ffffff;
+    --border: #000;
+    --shadow: #000;
+    --accent: #ff6b00;
+    --subtext: #555;
+}
+
+/* DARK MODE */
+body.dark {
+    --bg: #0f0f0f;
+    --text: #f5f5f5;
+    --card-bg: #1a1a1a;
+    --border: #ffffff;
+    --shadow: #ffffff;
+    --accent: #ff6b00;
+    --subtext: #bbb;
+}
+
 body {
+    background-color: var(--bg);
+    color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
         'Helvetica Neue', sans-serif;
-
-    background-color: #ffffff;
-    color: #111;
 }
 
-/* REMOVE LINK STYLES */
+
+
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* SMOOTH SCROLL */
 html {
     scroll-behavior: smooth;
 }
 
-/* CUSTOM WEBKIT SCROLLBAR */
-
-/* Width of the entire scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
-/* Track (background) */
+
 ::-webkit-scrollbar-track {
     background: #000;
 }
 
-/* Scroll thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
     background: #fff;
     transition: background 0.3s ease;
 }
 
-/* Thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #ff6b00;
 }
