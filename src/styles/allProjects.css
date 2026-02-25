@@ -44,9 +44,9 @@
 .all-project-card {
     font-family: Montserrat, sans-serif;
 
-    background: #ffffff;
-    border: 3px solid #000;
-    box-shadow: 10px 10px 0 #000;
+    background: var(--card-bg);
+    border: 3px solid var(--border);
+    box-shadow: 10px 10px 0 var(--shadow);
 
     transform: translate(-6px, -6px);
     transition: all 0.18s ease;
@@ -57,7 +57,7 @@
 
 .all-project-card:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 #000;
+    box-shadow: 6px 6px 0 var(--shadow);
 }
 
 
@@ -66,8 +66,9 @@
 /* ============================= */
 
 .all-card-head {
-    background: #fff;
-    border-bottom: 3px solid #000;
+    background: var(--card-bg);
+    border: 3px solid var(--border);
+    border-bottom: 3px solid var(--border);
 
     font-weight: 900;
     font-size: 14px;
@@ -76,17 +77,13 @@
 }
 
 
-/* ============================= */
-/* CARD CONTENT */
-/* ============================= */
-
 .all-card-content {
     padding: 14px;
 }
 
 .all-project-desc {
     margin-top: 10px;
-    color: #444;
+    color: var(--subtext);
     line-height: 1.5;
 }
 
@@ -99,9 +96,9 @@
 }
 
 .all-tech-stack span {
-    border: 2px solid #000;
+    border: 2px solid var(--border);
     padding: 4px 10px;
-    background: #fff;
+    background: var(--card-bg);
 
     font-size: 12px;
     font-weight: 700;
@@ -121,10 +118,10 @@
 .all-brutal-btn-head {
     padding: 6px 12px;
 
-    border: 3px solid #000;
-    box-shadow: 3px 3px 0 #000;
+    border: 3px solid var(--border);
+    box-shadow: 3px 3px 0 var(--shadow);
 
-    background: #ff6b00;
+    background: var(--accent);
     color: #fff;
     font-weight: 700;
 
@@ -137,17 +134,17 @@
 
 .all-brutal-btn-head:hover {
     transform: translate(1.5px, 1.5px);
-    box-shadow: 1.5px 1.5px 0 #000;
+    box-shadow: 1.5px 1.5px 0 var(--shadow);
 }
 
 
 .all-brutal-btn {
     padding: 6px 12px;
 
-    border: 3px solid #000;
-    box-shadow: 3px 3px 0 #000;
+    border: 3px solid var(--border);
+    box-shadow: 3px 3px 0 var(--shadow);
 
-    background: #ff6b00;
+    background: var(--accent);
     color: #fff;
     font-weight: 700;
 
@@ -157,7 +154,7 @@
 
 .all-brutal-btn:hover {
     transform: translate(1.5px, 1.5px);
-    box-shadow: 1.5px 1.5px 0 #000;
+    box-shadow: 1.5px 1.5px 0 var(--shadow);
 }
 
 
