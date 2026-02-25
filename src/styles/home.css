@@ -44,9 +44,18 @@
     outline: none;
 }
 
+body.dark .hero-btn {
+    box-shadow: 10px 10px 10px var(--shadow);
+}
+
 .hero-btn:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 var(--shadow);
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 var(--shadow);
+}
+
+body.dark .hero-btn:hover {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 var(--shadow);
 }
 
 .hero-btn:active {

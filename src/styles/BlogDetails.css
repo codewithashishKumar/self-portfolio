@@ -7,7 +7,7 @@
 
 .back-btn {
     padding: 6px 12px;
-    border: 3px solid var(--border);
+    border: 1px solid var(--border);
     box-shadow: 3px 3px 0 var(--shadow);
     background: var(--accent);
     color: #fff;
@@ -20,7 +20,16 @@
 
 .back-btn:hover {
     transform: translate(1.5px, 1.5px);
-    box-shadow: 1.5px 1.5px 0 var(--shadow);
+    box-shadow: 0 0 0 var(--shadow);
+}
+
+body.dark .back-btn {
+    box-shadow: 3px 3px 5px var(--shadow);
+}
+
+body.dark .back-btn:hover {
+    transform: translate(1.5px, 1.5px);
+    box-shadow: 0 0 0 var(--shadow);
 }
 
 .blog-details {
@@ -63,9 +72,19 @@
 }
 
 .news-image img:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 4px 4px 0 var(--shadow);
+    transform: translate(1.5px, 1.5px);
+    box-shadow: 0 0 0 var(--shadow);
 }
+
+body.dark .news-image img {
+    box-shadow: 10px 10px 10px var(--shadow);
+}
+
+body.dark .news-image img:hover {
+    transform: translate(1.5px, 1.5px);
+    box-shadow: 0 0 0 var(--shadow);
+}
+
 
 .news-text {
     flex: 1;
@@ -80,6 +99,7 @@
 .blog-rating {
     font-family: "Open Sans", sans-serif;
     color: var(--text);
+    margin-bottom: 20px;
 }
 
 .news-full {

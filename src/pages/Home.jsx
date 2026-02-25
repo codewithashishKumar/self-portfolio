@@ -5,32 +5,28 @@ import SkillsSection from "./Skills.jsx";
 import ExperienceSection from "./Experience.jsx";
 import ProjectsSection from "./Projects.jsx";
 import GitHubContributions from "./GitHubContributions.jsx";
-
+import useReveal from "../data/useReveal";
 
 const Home = () => {
 
     const navigate = useNavigate();
+    useReveal();
     return (
         <>
             <section className="hero">
-
-                {/* LEFT */}
                 <div className="hero-left">
-
                     <h1 className="hero-title">
-                        Hey, This is <br />
+                        Hello, I'm <br />
                         Ashish <span className="accent">Kumar</span>
                     </h1>
-
                     <p className="hero-subtitle">
-                        An interactive Frontend Developer
-                    </p>
-
-                    <p className="hero-subtitle">
-                        I build beautifully simple web apps and love what I do.
+                        Frontend Developer specializing in interactive and user-focused web experiences.
                     </p>
                     <p className="hero-subtitle">
-                        4+ years of Experience
+                        I design and build clean, scalable, and high-performing web applications.
+                    </p>
+                    <p className="hero-subtitle">
+                        Bringing over 4 years of professional experience in frontend development.
                     </p>
                     <button
                         className="hero-btn"
@@ -38,12 +34,8 @@ const Home = () => {
                     >
                         Let's Talk →
                     </button>
-
                 </div>
-
-                {/* RIGHT */}
                 <div className="hero-right">
-
                     <div className="circle">
                         <img
                             src={luffy}
@@ -51,19 +43,27 @@ const Home = () => {
                             className="hero-img"
                         />
                     </div>
-
                     <div className="badge">
                         10+ Projects <br />
                         Completed
                     </div>
-
                 </div>
-
             </section>
-            <SkillsSection />
-            <ExperienceSection />
-            <ProjectsSection />
-            <GitHubContributions />
+            <div className="reveal">
+                <SkillsSection />
+            </div>
+
+            <div className="reveal">
+                <ExperienceSection />
+            </div>
+
+            <div className="reveal">
+                <ProjectsSection />
+            </div>
+
+            <div className="reveal">
+                <GitHubContributions />
+            </div>
         </>
 
 
