@@ -99,3 +99,81 @@
     line-height: 1.6;
     font-family: "Open Sans", sans-serif;
 }
+
+@media (max-width: 768px) {
+    .experience {
+        padding: 20px;
+    }
+
+    .timeline {
+        padding-left: 15px;
+        margin-top: 20px;
+    }
+
+    .timeline::before {
+        left: 8px;
+    }
+
+    .timeline-item {
+        position: relative;
+        gap: 0;
+        padding-left: 12px;
+        margin-top: 16px;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: -12px;
+        top: 0.3em;
+        width: 12px;
+        height: 12px;
+        margin: 0;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .section-sub {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .timeline-content h3 {
+        font-size: 17px;
+    }
+
+    .company {
+        font-size: 13px;
+    }
+
+    .timeline-content p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .section-sub {
+        font-size: 12px;
+    }
+
+    .timeline-content h3 {
+        font-size: 14px;
+    }
+
+    .timeline-content p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}

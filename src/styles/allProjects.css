@@ -162,3 +162,143 @@ body.dark .all-project-card:hover {
 .all-section-title:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
+
+/* =========================
+   Responsive below 1024px
+   ========================= */
+@media (max-width: 1024px) {
+
+    .all-projects {
+        padding: 80px 10px;
+        min-height: auto;
+        margin-top: 60px;
+    }
+
+    .allprojectsHead {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .all-brutal-btn-head {
+        position: static;
+        align-self: flex-start;
+    }
+
+    .all-section-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .all-projects-grid {
+        margin-top: 50px;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .all-project-card {
+        transform: translate(-4px, -4px);
+        box-shadow: 6px 6px 0 var(--shadow);
+    }
+
+    .all-project-card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0 var(--shadow);
+    }
+
+    .all-card-head {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .all-card-content {
+        padding: 12px;
+    }
+
+    .all-project-desc {
+        font-size: 14px;
+    }
+
+    .all-tech-stack span {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .all-project-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .all-brutal-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   Below 768px (tablets / large phones)
+   ========================= */
+@media (max-width: 768px) {
+
+    .all-section-title {
+        font-size: 24px;
+    }
+
+    .all-card-head {
+        font-size: 12px;
+    }
+
+    .all-project-desc {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .all-tech-stack span {
+        font-size: 10px;
+        padding: 3px 7px;
+    }
+
+    .all-brutal-btn,
+    .all-brutal-btn-head {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+
+/* =========================
+   Below 420px (small phones)
+   ========================= */
+@media (max-width: 420px) {
+
+    .all-projects {
+        padding: 60px 18px;
+    }
+
+    .all-section-title {
+        font-size: 20px;
+    }
+
+    .all-card-head {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    .all-project-desc {
+        font-size: 12px;
+    }
+
+    .all-tech-stack {
+        gap: 6px;
+    }
+
+    .all-tech-stack span {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+
+    .all-brutal-btn,
+    .all-brutal-btn-head {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+}

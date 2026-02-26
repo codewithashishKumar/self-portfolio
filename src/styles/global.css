@@ -58,6 +58,7 @@ html {
 
 ::-webkit-scrollbar {
     width: 10px;
+    height: 2px;
 }
 
 

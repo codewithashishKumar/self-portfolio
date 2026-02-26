@@ -98,3 +98,120 @@
 .extraItem {
     margin-top: 8px;
 }
+
+
+@media (max-width: 1024px) {
+    .gitHubSection {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        direction: ltr;
+        scale: 0.9;
+    }
+
+    .gitHubBody {
+        padding: 80px 20px;
+        gap: 32px;
+    }
+
+    .gitHubHeader {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .gitHubStats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statBox {
+        border-right: none;
+        border-bottom: 1px solid #e1e4e8;
+    }
+
+    .statBox:nth-last-child(-n + 2) {
+        border-bottom: none;
+    }
+
+    .gitHubExtraInfo {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+/* =========================
+   Mobile (≤ 768px)
+========================= */
+
+@media (max-width: 768px) {
+    .gitHubBody {
+        padding: 60px 16px;
+        gap: 8px;
+    }
+
+    .gitHubHeader h2 {
+        font-size: 20px;
+    }
+
+    .gitHubStats {
+        grid-template-columns: 1fr;
+    }
+
+    .statBox {
+        padding: 16px;
+        border-bottom: 1px solid #e1e4e8;
+    }
+
+    .statBox:last-child {
+        border-bottom: none;
+    }
+
+    .statBox h3 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .gitHubExtraInfo {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    .react-activity-calendar__footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px !important;
+    }
+
+    .react-activity-calendar__legend-colors {
+        margin-left: 0 !important;
+    }
+}
+
+/* =========================
+   Small Phones (≤ 480px)
+========================= */
+
+@media (max-width: 480px) {
+    .gitHubBody {
+        padding: 50px 12px;
+    }
+
+    .gitHubHeader h2 {
+        font-size: 18px;
+    }
+
+    .gitHubLinkClass {
+        font-size: 14px;
+    }
+
+    .statBox h3 {
+        font-size: 22px;
+    }
+
+    .statBox p {
+        font-size: 13px;
+    }
+}

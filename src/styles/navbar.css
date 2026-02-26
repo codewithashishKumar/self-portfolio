@@ -8,7 +8,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 8px 30px 8px 80px;
-    position: sticky;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 60px;
     top: 0;
     background: rgba(255, 255, 255);
     backdrop-filter: blur(12px);
