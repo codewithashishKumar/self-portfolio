@@ -49,24 +49,24 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <div className="reveal">
-                <SkillsSection />
-            </div>
+            <section className="sections">
+                <div className="reveal">
+                    <SkillsSection />
+                </div>
 
-            <div className="reveal">
-                <ExperienceSection />
-            </div>
+                <div className="reveal">
+                    <ExperienceSection />
+                </div>
 
-            <div className="reveal">
-                <ProjectsSection />
-            </div>
+                <div className="reveal">
+                    <ProjectsSection />
+                </div>
 
-            <div className="reveal">
-                <GitHubContributions />
-            </div>
+                <div className="reveal">
+                    <GitHubContributions />
+                </div>
+            </section>
         </>
-
-
 
     );
 };
