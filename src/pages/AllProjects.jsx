@@ -29,6 +29,15 @@ const projectsData = [
         live: "https://weather-sphere-steel.vercel.app/",
         github: "https://github.com/codewithashishKumar/WeatherSphere",
     },
+    {
+        id: 4,
+        title: "AssetTrack - Asset Management App",
+        description:
+            "A full-stack asset management application that enables users to add, track, update, and manage organizational assets efficiently. Features include asset categorization, status tracking, search functionality, and a responsive dashboard for streamlined asset monitoring.",
+        tech: ["React", "Node.js", "Express", "MongoDB", "CSS", "Vercel"],
+        live: "https://assettrack-app.vercel.app/",
+        github: "https://github.com/codewithashishKumar/assettrack-app",
+    }
 ];
 
 const AllProjects = () => {
