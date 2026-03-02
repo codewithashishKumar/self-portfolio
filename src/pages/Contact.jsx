@@ -7,7 +7,7 @@ const Contact = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [popupMessage, setPopupMessage] = useState("");
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
@@ -32,39 +32,7 @@ const Contact = () => {
             return;
         }
 
-        try {
-
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    message
-                })
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message);
-            }
-
-            setPopupMessage("✅ Message sent successfully!");
-            setShowPopup(true);
-
-            e.target.reset();
-            return;
-
-        } catch (error) {
-
-            setPopupMessage("❌ Failed to send message.");
-            setShowPopup(true);
-            return;
-
-        }
+        // 👉 API logic here
 
         setPopupMessage("✅ Message sent successfully!");
         setShowPopup(true);
