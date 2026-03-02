@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
+import CustomLoader from "../pages/CustomLoader";
+import { useState, useEffect } from "react";
 import "../styles/allProjects.css";
+
+
 
 const projectsData = [
     {
@@ -41,6 +45,21 @@ const projectsData = [
 ];
 
 const AllProjects = () => {
+    // adding loader
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 600);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (loading) {
+        return <CustomLoader />;
+    }
+
     return (
         <section className="all-projects">
             <div className="allprojectsHead">
