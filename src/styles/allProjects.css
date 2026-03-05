@@ -40,7 +40,7 @@
 
 .all-project-card:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 var(--shadow);
+    box-shadow: 0 0 0 var(--shadow);
 }
 
 body.dark .all-project-card {
