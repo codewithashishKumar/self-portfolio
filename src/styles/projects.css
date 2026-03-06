@@ -40,10 +40,6 @@
 }
 
 
-/* ============================= */
-/* CARD HEADER */
-/* ============================= */
-
 .card-head {
     background: var(--bg);
     border-bottom: 3px solid var(--border);
@@ -142,6 +138,7 @@ body.dark .project-card:hover {
     .projects-grid {
         margin-top: 24px;
         gap: 28px;
+        grid-template-columns: 1fr;
     }
 
     .card-head {

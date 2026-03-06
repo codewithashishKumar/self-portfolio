@@ -95,9 +95,7 @@
     color: var(--text);
 }
 
-.extraItem {
-    margin-top: 8px;
-}
+
 
 
 @media (max-width: 1024px) {
@@ -122,11 +120,13 @@
 
     .gitHubStats {
         grid-template-columns: repeat(2, 1fr);
+        margin-top: 5px;
     }
 
     .statBox {
         border-right: none;
         border-bottom: 1px solid #e1e4e8;
+        padding: 8px;
     }
 
     .statBox:nth-last-child(-n + 2) {
@@ -159,7 +159,7 @@
     }
 
     .statBox {
-        padding: 16px;
+        padding: 8px;
         border-bottom: 1px solid #e1e4e8;
     }
 

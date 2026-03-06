@@ -206,6 +206,7 @@ body.dark .skill-card:hover {
 
     .skills-grid {
         margin-top: 24px;
+        grid-template-columns: 1fr;
     }
 
     .skill-card ul {
