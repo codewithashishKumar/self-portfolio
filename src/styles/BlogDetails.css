@@ -48,8 +48,10 @@ body.dark .back-btn:hover {
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 3px solid var(--border);
+    border-bottom: 1.5px solid var(--border);
     padding-bottom: 10px;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text);
 }
 
 .news-row {

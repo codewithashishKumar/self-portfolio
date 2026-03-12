@@ -141,6 +141,8 @@ body.dark .all-project-card:hover {
     font-size: 32px;
     font-weight: 900;
     position: relative;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text);
 }
 
 .all-section-title::after {

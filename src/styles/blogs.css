@@ -15,16 +15,18 @@
     gap: 10px;
     width: 100%;
     margin: 50px auto;
+
 }
 
 .blog-titleHeader {
-    font-size: 28px;
+    font-size: 42px;
     font-weight: 800;
     text-align: center;
     position: relative;
     width: fit-content;
     font-family: "Open Sans", sans-serif;
-    color: var(--text);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text);
 }
 
 .blog-titleDesc {

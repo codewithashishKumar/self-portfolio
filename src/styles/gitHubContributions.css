@@ -20,7 +20,9 @@
     text-align: center;
     cursor: pointer;
     position: relative;
-    color: var(--text);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text);
+    font-size: 32px;
 }
 
 .gitHubSection {

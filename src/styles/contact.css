@@ -24,7 +24,8 @@
 .contact-title {
     font-size: 48px;
     font-weight: 800;
-    color: var(--text);
+    color: transparent;
+    -webkit-text-stroke: 2px var(--text);
 }
 
 .contact-sub {

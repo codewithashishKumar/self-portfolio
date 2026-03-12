@@ -17,6 +17,8 @@
     margin: auto;
     cursor: pointer;
     position: relative;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--text);
 }
 
 .skills-title::after {

@@ -16,11 +16,18 @@
     font-size: clamp(36px, 5vw, 72px);
     font-weight: 800;
     line-height: 1.08;
-    color: var(--text);
+    /* color: var(--text); */
+    color: transparent;
+    /* makes inside empty */
+    -webkit-text-stroke: 2px var(--text);
 }
 
 .accent {
-    color: var(--accent);
+    /* color: var(--accent); */
+
+    color: transparent;
+    /* makes inside empty */
+    -webkit-text-stroke: 2px var(--accent);
 }
 
 .hero-subtitle {
