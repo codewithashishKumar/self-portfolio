@@ -156,18 +156,18 @@ export default function GitHubContributions() {
                     fontSize={14}
                     theme={{
                         light: [
-                            "#ebedf0", // no contributions
-                            "#9be9a8", // low
-                            "#40c463", // medium
-                            "#30a14e", // high
-                            "#216e39", // very high
+                            "#ff6b0020", // no contributions
+                            "#ff6b0040", // very low
+                            "#ff6b0060",
+                            "#ff6b0080",
+                            "#ff6b00",
                         ],
                         dark: [
-                            "#161b22", // no contributions
-                            "#0e4429", // low
-                            "#006d32", // medium
-                            "#26a641", // high
-                            "#39d353", // very high
+                            "#ff6b0020", // no contributions
+                            "#ff6b0040", // very low
+                            "#ff6b0060",
+                            "#ff6b0080",
+                            "#ff6b00",
                         ],
                     }}
                 />
