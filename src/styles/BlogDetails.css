@@ -147,7 +147,7 @@ body.dark .news-image img:hover {
 /* Tablets & Small Laptops */
 @media (max-width: 768px) {
   .indiBlogsPage {
-    margin-top: 40px;
+    margin-top: 100px;
   }
 
   .blog-details {
