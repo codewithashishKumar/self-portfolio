@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { Github } from "lucide-react";
 import "../styles/gitHubContributions.css";
 
 export default function GitHubContributions() {
+    const calendarRef = useRef(null);
     const currentYear = new Date().getFullYear();
     const [stats, setStats] = useState({
         total: 0,
@@ -105,6 +106,39 @@ export default function GitHubContributions() {
         fetchStats();
     }, []);
 
+    // 
+    useEffect(() => {
+        function centerCurrentMonth() {
+            if (window.innerWidth > 1024) return;
+
+            const container = calendarRef.current;
+            if (!container) return;
+
+            setTimeout(() => {
+                const currentMonth = new Date().getMonth();
+
+                const scrollWidth = container.scrollWidth;
+                const visibleWidth = container.clientWidth;
+
+                const targetScroll =
+                    ((currentMonth + 0.5) / 12) * scrollWidth -
+                    visibleWidth / 2;
+
+                container.scrollTo({
+                    left: Math.max(0, targetScroll),
+                    behavior: "smooth",
+                });
+            }, 500);
+        }
+
+        centerCurrentMonth();
+
+        window.addEventListener("resize", centerCurrentMonth);
+
+        return () =>
+            window.removeEventListener("resize", centerCurrentMonth);
+    }, []);
+
     return (
         <div className="gitHubBody">
             <div className="gitHubHeader">
@@ -113,7 +147,7 @@ export default function GitHubContributions() {
             </div>
 
             {/* Calendar */}
-            <div className="gitHubSection">
+            <div className="gitHubSection" ref={calendarRef}>
                 <GitHubCalendar
                     username="codewithashishKumar"
                     year={currentYear}
