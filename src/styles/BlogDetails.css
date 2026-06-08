@@ -1,122 +1,229 @@
 .indiBlogsPage {
-    display: flex;
-    flex-direction: column;
-    min-height: 90vh;
-    width: 100%;
-    margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  width: 100%;
+  margin-top: 60px;
 }
 
 .back-btn {
-    padding: 6px 12px;
-    border: 1px solid var(--border);
-    box-shadow: 3px 3px 0 var(--shadow);
-    background: var(--accent);
-    color: #fff;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    width: fit-content;
-    margin: 50px 0px 15px 100px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  box-shadow: 3px 3px 0 var(--shadow);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: fit-content;
+  margin: 50px 0px 15px 100px;
 }
 
 .back-btn:hover {
-    transform: translate(1.5px, 1.5px);
-    box-shadow: 0 0 0 var(--shadow);
+  transform: translate(1.5px, 1.5px);
+  box-shadow: 0 0 0 var(--shadow);
 }
 
 body.dark .back-btn {
-    box-shadow: 3px 3px 5px var(--shadow);
+  box-shadow: 3px 3px 5px var(--shadow);
 }
 
 body.dark .back-btn:hover {
-    transform: translate(1.5px, 1.5px);
-    box-shadow: 0 0 0 var(--shadow);
+  transform: translate(1.5px, 1.5px);
+  box-shadow: 0 0 0 var(--shadow);
 }
 
 .blog-details {
-    width: 100%;
-    padding: 40px 100px;
-    font-family: "Georgia", serif;
-    line-height: 1.8;
-    color: var(--text);
+  width: 100%;
+  padding: 40px 100px;
+  font-family: "Georgia", serif;
+  line-height: 1.8;
+  color: var(--text);
 }
 
 .news-title {
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1.5px solid var(--border);
-    padding-bottom: 10px;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 10px;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text);
 }
 
 .news-row {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
 .news-row.reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .news-image img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border: 3px solid var(--border);
-    box-shadow: 8px 8px 0 var(--shadow);
-    transition: 0.3s ease;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  box-shadow: 8px 8px 0 var(--shadow);
+  transition: 0.3s ease;
 }
 
 .news-image img:hover {
-    transform: translate(1.5px, 1.5px);
-    box-shadow: 0 0 0 var(--shadow);
+  transform: translate(1.5px, 1.5px);
+  box-shadow: 0 0 0 var(--shadow);
 }
 
 body.dark .news-image img {
-    box-shadow: 10px 10px 10px var(--shadow);
+  box-shadow: 10px 10px 10px var(--shadow);
 }
 
 body.dark .news-image img:hover {
-    transform: translate(1.5px, 1.5px);
-    box-shadow: 0 0 0 var(--shadow);
+  transform: translate(1.5px, 1.5px);
+  box-shadow: 0 0 0 var(--shadow);
 }
 
-
 .news-text {
-    flex: 1;
+  flex: 1;
 }
 
 .news-text p {
-    font-family: "Open Sans", sans-serif;
-    text-align: justify;
-    color: var(--subtext);
+  font-family: "Open Sans", sans-serif;
+  text-align: justify;
+  color: var(--subtext);
 }
 
 .blog-rating {
-    font-family: "Open Sans", sans-serif;
-    color: var(--text);
-    margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text);
+  margin-bottom: 20px;
 }
 
 .news-full {
-    font-family: "Open Sans", sans-serif;
-    color: var(--text);
+  font-family: "Open Sans", sans-serif;
+  color: var(--text);
 }
 
 @media (max-width: 1300px) {
-    .news-row {
-        flex-direction: column !important;
-    }
+  .news-row {
+    flex-direction: column !important;
+  }
 
-    .news-image img {
-        width: 100%;
-        height: auto;
-    }
+  .news-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Large Tablets */
+@media (max-width: 1024px) {
+  .blog-details {
+    padding: 30px 50px;
+  }
+
+  .back-btn {
+    margin: 40px 0 15px 50px;
+  }
+
+  .news-title {
+    font-size: 28px;
+  }
+
+  .news-row {
+    gap: 30px;
+  }
+
+  .news-image img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Tablets & Small Laptops */
+@media (max-width: 768px) {
+  .indiBlogsPage {
+    margin-top: 40px;
+  }
+
+  .blog-details {
+    padding: 25px;
+  }
+
+  .back-btn {
+    margin: 25px;
+    padding: 8px 14px;
+  }
+
+  .news-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    -webkit-text-stroke: 0.8px var(--text);
+  }
+
+  .news-row {
+    flex-direction: column !important;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .news-image {
+    width: 100%;
+  }
+
+  .news-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .news-text p,
+  .news-full,
+  .blog-rating {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .blog-details {
+    padding: 15px;
+  }
+
+  .back-btn {
+    margin: 15px;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .news-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .news-row {
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .news-image img {
+    border-width: 2px;
+    box-shadow: 5px 5px 0 var(--shadow);
+  }
+
+  .news-text p,
+  .news-full,
+  .blog-rating {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+  }
 }
