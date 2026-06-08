@@ -157,15 +157,15 @@ export default function GitHubContributions() {
                     theme={{
                         light: [
                             "#ff6b0020", // no contributions
-                            "#ff6b0040", // very low
-                            "#ff6b0060",
+                            "#ff6b0080", // very low
+                            "#ff6b0080",
                             "#ff6b0080",
                             "#ff6b00",
                         ],
                         dark: [
                             "#ff6b0020", // no contributions
-                            "#ff6b0040", // very low
-                            "#ff6b0060",
+                            "#ff6b0080", // very low
+                            "#ff6b0080",
                             "#ff6b0080",
                             "#ff6b00",
                         ],
