@@ -183,10 +183,12 @@ export default function GitHubContributions() {
                     blockMargin={5}
                     fontSize={14}
                     renderBlock={(block, activity) =>
-                        React.cloneElement(block, {
-                            "data-tooltip-id": "github-tooltip",
-                            "data-tooltip-content": `${activity.count} contributions on ${activity.date}`,
-                        })
+                        activity.count > 0
+                            ? React.cloneElement(block, {
+                                "data-tooltip-id": "github-tooltip",
+                                "data-tooltip-content": `${activity.count} contributions on ${formatPrettyDate(activity.date)}`,
+                            })
+                            : block
                     }
                     theme={{
                         light: [
