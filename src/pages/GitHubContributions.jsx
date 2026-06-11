@@ -11,8 +11,9 @@ export default function GitHubContributions() {
         longestStreak: 0,
         currentStreak: 0,
     });
-    const [accountCreated, setAccountCreated] = useState("");
+    // const [accountCreated, setAccountCreated] = useState("");
     const [firstContribution, setFirstContribution] = useState("");
+    const [lastContribution, setLastContribution] = useState("");
 
     function formatPrettyDate(dateString) {
         const date = new Date(dateString);
@@ -89,9 +90,20 @@ export default function GitHubContributions() {
                 const firstActiveDay = contributions.find(
                     (day) => day.count > 0
                 );
+
+                const lastActiveDay = [...contributions]
+                    .reverse()
+                    .find((day) => day.count > 0);
+
                 setFirstContribution(
                     firstActiveDay
                         ? formatPrettyDate(firstActiveDay.date)
+                        : "N/A"
+                );
+
+                setLastContribution(
+                    lastActiveDay
+                        ? formatPrettyDate(lastActiveDay.date)
                         : "N/A"
                 );
 
@@ -102,14 +114,14 @@ export default function GitHubContributions() {
                 });
 
                 // Fetch account creation date
-                const userResponse = await fetch(
-                    `https://api.github.com/users/${username}`
-                );
-                const userData = await userResponse.json();
+                // const userResponse = await fetch(
+                //     `https://api.github.com/users/${username}`
+                // );
+                // const userData = await userResponse.json();
 
-                setAccountCreated(
-                    formatPrettyDate(userData.created_at)
-                );
+                // setAccountCreated(
+                //     formatPrettyDate(userData.created_at)
+                // );
 
             } catch (error) {
                 console.error("Error fetching stats:", error);
@@ -156,7 +168,9 @@ export default function GitHubContributions() {
         <div className="gitHubBody">
             <div className="gitHubHeader">
                 <Github />
-                <h2>My GitHub Activity ({currentYear})</h2>
+                <h2 data-text={`My GitHub Activity (${currentYear})`}>
+                    My GitHub Activity ({currentYear})
+                </h2>
             </div>
 
             {/* Calendar */}
@@ -208,10 +222,13 @@ export default function GitHubContributions() {
                 <div className="extraItem">
                     <strong>First Contribution:</strong> {firstContribution}
                 </div>
-
                 <div className="extraItem">
-                    <strong>GitHub Joined:</strong> {accountCreated}
+                    <strong>Last Contribution:</strong> {lastContribution}
                 </div>
+
+                {/* <div className="extraItem">
+                    <strong>GitHub Joined:</strong> {accountCreated}
+                </div> */}
             </div>
             {/* Profile Link */}
             <div className="gitHubLinkClass">
