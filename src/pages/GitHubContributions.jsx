@@ -51,10 +51,12 @@ export default function GitHubContributions() {
                 const total = contribData.total?.[year] || 0;
 
                 // Streak calculations
+                // Streak calculations
                 let currentStreak = 0;
                 let longestStreak = 0;
                 let tempStreak = 0;
 
+                // Longest streak
                 contributions.forEach((day) => {
                     if (day.count > 0) {
                         tempStreak++;
@@ -64,7 +66,18 @@ export default function GitHubContributions() {
                     }
                 });
 
-                for (let i = contributions.length - 1; i >= 0; i--) {
+                // Current streak
+                let lastIndex = contributions.length - 1;
+
+                // Skip trailing days with 0 contributions
+                while (
+                    lastIndex >= 0 &&
+                    contributions[lastIndex].count === 0
+                ) {
+                    lastIndex--;
+                }
+
+                for (let i = lastIndex; i >= 0; i--) {
                     if (contributions[i].count > 0) {
                         currentStreak++;
                     } else {
