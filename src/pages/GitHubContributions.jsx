@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { Github } from "lucide-react";
+import { Tooltip } from "react-tooltip";
 import "../styles/gitHubContributions.css";
 
 export default function GitHubContributions() {
@@ -181,21 +182,36 @@ export default function GitHubContributions() {
                     blockSize={15}
                     blockMargin={5}
                     fontSize={14}
+                    renderBlock={(block, activity) =>
+                        React.cloneElement(block, {
+                            "data-tooltip-id": "github-tooltip",
+                            "data-tooltip-content": `${activity.count} contributions on ${activity.date}`,
+                        })
+                    }
                     theme={{
                         light: [
-                            "#ff6b0020", // no contributions
-                            "#ff6b0080", // very low
+                            "#ff6b0020",
+                            "#ff6b0080",
                             "#ff6b0080",
                             "#ff6b0080",
                             "#ff6b00",
                         ],
                         dark: [
-                            "#ff6b0020", // no contributions
-                            "#ff6b0080", // very low
+                            "#ff6b0020",
+                            "#ff6b0080",
                             "#ff6b0080",
                             "#ff6b0080",
                             "#ff6b00",
                         ],
+                    }}
+                />
+                <Tooltip
+                    id="github-tooltip"
+                    place="top"
+                    style={{
+                        backgroundColor: "#111",
+                        color: "#fff",
+                        zIndex: 9999,
                     }}
                 />
             </div>

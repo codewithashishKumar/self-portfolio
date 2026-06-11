@@ -223,3 +223,8 @@
     font-size: 13px;
   }
 }
+
+.react-activity-calendar rect:hover {
+  stroke: #000 !important;
+  stroke-width: 2px !important;
+}
