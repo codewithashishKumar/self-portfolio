@@ -209,12 +209,8 @@ export default function GitHubContributions() {
                 />
                 <Tooltip
                     id="github-tooltip"
+                    className="github-tooltip"
                     place="top"
-                    style={{
-                        backgroundColor: "#111",
-                        color: "#fff",
-                        zIndex: 9999,
-                    }}
                 />
             </div>
 

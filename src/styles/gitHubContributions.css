@@ -224,6 +224,12 @@
   }
 }
 
+.github-tooltip {
+  background-color: var(--border) !important;
+  color: var(--card-bg) !important;
+  z-index: 9999 !important;
+}
+
 .react-activity-calendar rect:hover {
   stroke: var(--text) !important;
   stroke-width: 2px !important;
