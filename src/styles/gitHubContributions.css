@@ -225,6 +225,6 @@
 }
 
 .react-activity-calendar rect:hover {
-  stroke: #000 !important;
+  stroke: var(--text) !important;
   stroke-width: 2px !important;
 }
