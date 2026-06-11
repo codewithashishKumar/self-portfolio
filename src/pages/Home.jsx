@@ -20,13 +20,13 @@ const Home = () => {
                         Ashish <span className="accent">Kumar</span>
                     </h1>
                     <p className="hero-subtitle">
-                        Frontend Developer specializing in interactive and user-focused web experiences.
+                        Frontend Developer passionate about building fast, intuitive, and visually engaging web experiences.
                     </p>
                     <p className="hero-subtitle">
-                        I design and build clean, scalable, and high-performing web applications.
+                        I enjoy transforming complex ideas into intuitive digital experiences through clean code, scalable architecture, and thoughtful design.
                     </p>
                     <p className="hero-subtitle">
-                        Bringing over 4 years of professional experience in frontend development.
+                        With 4+ years of professional experience, I turn ideas into polished digital products that users enjoy and businesses trust.
                     </p>
                     <button
                         className="hero-btn"
